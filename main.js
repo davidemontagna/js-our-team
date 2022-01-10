@@ -30,3 +30,44 @@ const team = [
     image: 'barbara-ramos-graphic-designer.jpg',
   },
 ];
+
+
+
+const insertMember = document.getElementById("addMemberButton");
+
+insertMember.addEventListener("click", function(){
+
+  const newMember = {
+    name:'',
+    role: '',
+    image: '',
+  }
+   newMember['name'] = document.querySelector('#name').value;
+   newMember['role'] = document.querySelector('#role').value;
+   newMember['image'] = document.querySelector('#image').value;
+
+   team.push(newMember);
+   console.log(team);
+   
+  showCardMember();
+})
+
+
+function showCardMember(){
+  const card = document.getElementsByClassName("team-container");
+  for(i=0; i < team.length; i++){
+    card.innerHTML = `<div class="team-card">
+                      <div class="card-image">
+                        <img
+                          src="${team[i][2]}"
+                          alt="${team[i][0]}"
+                        />
+                      </div>
+                      <div class="card-text">
+                        <h3>${team[i][0]}</h3>
+                        <p>${team[i][1]}</p>
+                      </div>
+                    </div>`
+  }
+  
+}
