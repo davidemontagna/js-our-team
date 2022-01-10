@@ -69,6 +69,8 @@ insertMember.addEventListener("click", function(){
 
    showCardMember(team);
   
+   clearInput();
+
 })
 
 //Funzione per inserire la nuova card nell'html
@@ -90,4 +92,14 @@ function showCardMember(team){
                     </div>`
   }
   
+}
+
+//Funzione per ripulire le input boxes 
+function clearInput(){
+  const clearName = document.getElementById("name");
+  const clearRole = document.getElementById("role");
+  const clearImage = document.getElementById("image");
+  clearName.value = "";
+  clearRole.value = "";
+  clearImage.value = "";
 }
